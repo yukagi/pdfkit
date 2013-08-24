@@ -4,7 +4,7 @@ rvm:
 - 2.0.0
 
 before_install:
-  - sudo apt-get install wkhtmltopdf=0.9.5
+  - sudo apt-get install wkhtmltopdf=0.9.9
 
 before_script:
   rake wkhtmltopdf:version
