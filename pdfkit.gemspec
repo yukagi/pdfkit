@@ -26,5 +26,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency(%q<mocha>, [">= 0.9.10"])
   s.add_development_dependency(%q<rack-test>, [">= 0.5.6"])
   s.add_development_dependency(%q<activesupport>, [">= 3.0.8"])
-  s.add_development_dependency(%q<wkhtmltopdf-binary>, ["~> 0.9.5"]) unless $ENV['TRAVIS']
+  if $ENV['TRAVIS']
+    s.add_development_dependency(%q<wkhtmltopdf-heroku>,
+                                 git: "git://github.com/pdfkit/wkhtmltopdf-heroku")
+  else
+    s.add_development_dependency(%q<wkhtmltopdf-binary>, ["~> 0.9.5"])
+  end
 end
