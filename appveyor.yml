@@ -6,9 +6,10 @@ init:
 clone_folder: C:\projects\pdfkit
 
 install:
-  - ps: (new-object net.webclient).DownloadFile('https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-installer.exe', 'C:\wkhtmltopdf-installer.exe')
-  - C:\wkhtmltopdf-installer.exe
   - cmd: echo ruby --version
+  - ps: (new-object net.webclient).DownloadFile('https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-installer.exe', 'C:\wkhtmltopdf-installer.exe')
+  - ps: Get-FileHash C:\wkhtmltopdf-installer.exe -Algorithm MD5
+  #  - C:\wkhtmltopdf-installer.exe
   - bundle install
 
 test_script:
