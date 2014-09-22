@@ -1,0 +1,15 @@
+version: "{build}"
+
+init:
+  - git config --global core.autocrlf input
+
+clone_folder: C:\projects\pdfkit
+
+install:
+  - ps: (new-object net.webclient).DownloadFile('https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-installer.exe', 'C:\wkhtmltopdf-installer.exe')
+  - C:\wkhtmltopdf-installer.exe
+  - cmd: echo ruby --version
+  - bundle install
+
+test_script:
+  - rake
