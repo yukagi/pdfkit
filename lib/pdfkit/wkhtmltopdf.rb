@@ -3,7 +3,7 @@ class PDFKit
     attr_reader :options
     # Pulled from:
     # https://github.com/wkhtmltopdf/wkhtmltopdf/blob/ebf9b6cfc4c58a31349fb94c568b254fac37b3d3/README_WKHTMLTOIMAGE#L27
-    REPEATABLE_OPTIONS = %w[--allow --cookie --custom-header --post --post-file --run-script]
+    REPEATABLE_OPTIONS = %w[--allow --cookie --custom-header --post --post-file --run-script --replace]
     SPECIAL_OPTIONS = %w[cover toc]
 
     def initialize(options)
